@@ -179,14 +179,15 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
-    <tabs>Smart_Barcode_Set_UP</tabs>
-    <tabs>Test__c</tabs>
+    <tabs>standard-Knowledge</tabs>
+    <tabs>RegisteredUser__c</tabs>
+    <tabs>OneClick</tabs>
     <workspaceConfig>
         <mappings>
-            <tab>Smart_Barcode_Set_UP</tab>
+            <tab>OneClick</tab>
         </mappings>
         <mappings>
-            <tab>Test__c</tab>
+            <tab>RegisteredUser__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>
@@ -198,6 +199,9 @@
         <mappings>
             <fieldName>AccountId</fieldName>
             <tab>standard-Contact</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-Knowledge</tab>
         </mappings>
         <mappings>
             <tab>standard-Lead</tab>

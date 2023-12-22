@@ -33,9 +33,3 @@ export default class ShowArticles extends LightningElement {
    
 
 }
-
-
-
-
-
-

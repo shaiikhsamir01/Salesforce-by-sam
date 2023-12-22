@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>newqueueforchat</name>
+    <queueMembers>
+        <users>
+            <user>shadabshaikh2408@gmail.com</user>
+            <user>salesforceflowbuilder@ey.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>newqueueforchat</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>LiveChatTranscript</sobjectType>
+    </queueSobject>
+</Queue>

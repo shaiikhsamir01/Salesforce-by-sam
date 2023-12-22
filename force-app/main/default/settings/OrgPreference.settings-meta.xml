@@ -58,7 +58,7 @@
     </preferences>
     <preferences>
         <settingName>NetworksEnabled</settingName>
-        <settingValue>true</settingValue>
+        <settingValue>false</settingValue>
     </preferences>
     <preferences>
         <settingName>NotesReservedPref01</settingName>
@@ -70,6 +70,10 @@
     </preferences>
     <preferences>
         <settingName>PRMAccRelPref</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>Packaging2</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -106,7 +110,7 @@
     </preferences>
     <preferences>
         <settingName>ScratchOrgManagementPref</settingName>
-        <settingValue>false</settingValue>
+        <settingValue>true</settingValue>
     </preferences>
     <preferences>
         <settingName>SendThroughGmailPref</settingName>

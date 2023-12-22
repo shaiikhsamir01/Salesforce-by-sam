@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Product Support</label>
+            <name>Product_Support</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Billing Support</label>
+            <name>Billing_Support</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Order Support</label>
+            <name>Order_Support</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Support Options</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

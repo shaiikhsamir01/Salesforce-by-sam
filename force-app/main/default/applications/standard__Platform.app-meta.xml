@@ -8,6 +8,6 @@
     <tabs>standard-Contact</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
-    <tabs>Smart_Barcode_Set_UP</tabs>
-    <tabs>Test__c</tabs>
+    <tabs>RegisteredUser__c</tabs>
+    <tabs>OneClick</tabs>
 </CustomApplication>

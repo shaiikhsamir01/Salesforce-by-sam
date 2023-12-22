@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>create lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>create lead</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>create_lead</name>
+        <label>create lead</label>
+        <locationX>164</locationX>
+        <locationY>343</locationY>
+        <connector>
+            <targetReference>Leadsuccess</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Company</field>
+            <value>
+                <elementReference>Company_name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>b_First_name_b</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>Last_name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordCreates>
+    <screens>
+        <name>Leadsuccess</name>
+        <label>Leadsuccess</label>
+        <locationX>378</locationX>
+        <locationY>358</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Lead_created</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Lead created successfully&lt;/b&gt;&lt;img src=&quot;https://eycom28-dev-ed--c.documentforce.com/sfc/servlet.shepherd/version/download/0685i000005GPNc?asPdf=false&amp;amp;operationContext=CHATTER&quot;&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>scr1</name>
+        <label>scr1</label>
+        <locationX>184</locationX>
+        <locationY>189</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>create_lead</targetReference>
+        </connector>
+        <fields>
+            <name>b_First_name_b</name>
+            <dataType>String</dataType>
+            <fieldText>&lt;b&gt; First name &lt;/b&gt;</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Last_name</name>
+            <dataType>String</dataType>
+            <fieldText>Last name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Company_name</name>
+            <dataType>String</dataType>
+            <fieldText>Company name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>scr1</startElementReference>
+    <status>Obsolete</status>
+</Flow>

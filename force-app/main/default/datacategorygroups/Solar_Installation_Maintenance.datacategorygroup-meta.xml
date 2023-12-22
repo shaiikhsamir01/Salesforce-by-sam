@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Free Repairing</label>
+                    <name>Free_Repairing</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Online Payment</label>
+                        <name>Online_Payment</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>In Cash</label>
+                        <name>In_Cash</name>
+                    </dataCategory>
+                    <label>Paid Repairing</label>
+                    <name>Paid_Repairing</name>
+                </dataCategory>
+                <label>Repairing</label>
+                <name>Repairing</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Maintainance</label>
+                <name>Maintainance</name>
+            </dataCategory>
+            <label>Solar Panels</label>
+            <name>Solar_Panels</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Invert Repairing</label>
+                <name>Invert_Repairing</name>
+            </dataCategory>
+            <label>Inverters</label>
+            <name>Inverters</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Charge Controllers</label>
+            <name>Charge_Controllers</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Batteries</label>
+            <name>Batteries</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Solar Installation &amp; Maintenance</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

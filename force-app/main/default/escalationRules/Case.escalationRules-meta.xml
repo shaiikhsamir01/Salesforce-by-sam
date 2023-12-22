@@ -2,7 +2,7 @@
 <EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <escalationRule>
         <fullName>Standard</fullName>
-        <active>true</active>
+        <active>false</active>
         <ruleEntry>
             <businessHoursSource>Case</businessHoursSource>
             <criteriaItems>
@@ -21,12 +21,12 @@
                 <value>High</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>120</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -49,12 +49,12 @@
                 <value>Medium,Low</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>360</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -77,12 +77,12 @@
                 <value>High</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>240</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -105,12 +105,12 @@
                 <value>Medium,Low</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>480</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -128,12 +128,12 @@
                 <value>Silver</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>720</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -151,12 +151,12 @@
                 <value>Bronze</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>1440</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -174,12 +174,12 @@
                 <value>Gold,Platinum</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>360</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
@@ -197,15 +197,32 @@
                 <value>Silver,Bronze</value>
             </criteriaItems>
             <escalationAction>
-                <assignedTo>generatebarcode@astrea.com</assignedTo>
+                <assignedTo>salesforceflowbuilder@ey.com</assignedTo>
                 <assignedToTemplate>unfiled$public/SupportEscalatedCaseReassignment</assignedToTemplate>
                 <assignedToType>User</assignedToType>
                 <minutesToEscalation>1080</minutesToEscalation>
                 <notifyCaseOwner>false</notifyCaseOwner>
-                <notifyTo>generatebarcode@astrea.com</notifyTo>
+                <notifyTo>salesforceflowbuilder@ey.com</notifyTo>
                 <notifyToTemplate>unfiled$public/SupportEscalatedCaseNotification</notifyToTemplate>
             </escalationAction>
             <escalationStartTime>CaseCreation</escalationStartTime>
+        </ruleEntry>
+    </escalationRule>
+    <escalationRule>
+        <fullName>new escalation</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHoursSource>None</businessHoursSource>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email</value>
+            </criteriaItems>
+            <escalationAction>
+                <minutesToEscalation>30</minutesToEscalation>
+                <notifyCaseOwner>false</notifyCaseOwner>
+            </escalationAction>
+            <escalationStartTime>CaseLastModified</escalationStartTime>
         </ruleEntry>
     </escalationRule>
 </EscalationRules>

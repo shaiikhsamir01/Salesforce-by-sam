@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <decisions>
+        <name>Stage_check</name>
+        <label>Stage check</label>
+        <locationX>191</locationX>
+        <locationY>275</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Ifstageclosedwon</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_opportunity</targetReference>
+            </connector>
+            <label>Ifstageclosedwon</label>
+        </rules>
+        <rules>
+            <name>IfStagereverted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_opps</targetReference>
+            </connector>
+            <label>IfStagereverted</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Opportunity desc flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity desc flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_opportunity</name>
+        <label>Update opportunity</label>
+        <locationX>198</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Congratulation ! Opportunity has been successfully completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_opps</name>
+        <label>Update opps</label>
+        <locationX>386</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>The opportunity reverted back! please work on it ASAP</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <startElementReference>Stage_check</startElementReference>
+    <status>Obsolete</status>
+</Flow>

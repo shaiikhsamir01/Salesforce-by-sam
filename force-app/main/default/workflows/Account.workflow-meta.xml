@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>desc_update</fullName>
+        <field>Description</field>
+        <formula>&quot;Hello work flow chalra idhr&quot;</formula>
+        <name>desc update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>sending_record_to_requestbin</fullName>
+        <apiVersion>56.0</apiVersion>
+        <endpointUrl>https://eonw6yqcqztc2ra.m.pipedream.net</endpointUrl>
+        <fields>AccountNumber</fields>
+        <fields>AnnualRevenue</fields>
+        <fields>BillingCity</fields>
+        <fields>BillingCountry</fields>
+        <fields>BillingLatitude</fields>
+        <fields>Id</fields>
+        <fields>Industry</fields>
+        <fields>Name</fields>
+        <fields>Phone</fields>
+        <fields>Rating</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>salesforceflowbuilder@ey.com</integrationUser>
+        <name>sending record to requestbin</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>outbound message</fullName>
+        <actions>
+            <name>sending_record_to_requestbin</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Industry</field>
+            <operation>equals</operation>
+            <value>Agriculture</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

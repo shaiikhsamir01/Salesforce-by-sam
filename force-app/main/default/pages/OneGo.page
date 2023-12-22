@@ -1,0 +1,27 @@
+<apex:page controller="oneGo" >
+
+<apex:form >
+  <apex:pageBlock >
+    <apex:pageBlockSection title="Account Information" collapsible="false" columns="2">
+    <apex:inputField value="{!acc.Name}"/>
+    <apex:inputField value="{!acc.Phone}"/>
+    <apex:inputField value="{!acc.Type}"/> 
+    </apex:pageBlockSection>
+ <apex:pageBlockSection title="Contact Information" collapsible="false" columns="2">
+  <apex:inputField value="{!con.FirstName}"/>
+       <apex:inputField value="{!con.LastName}"/>
+      <apex:inputField value="{!con.phone}"/>
+         <apex:inputField value="{!con.Email}"/>
+  </apex:pageBlockSection> 
+  <apex:pageBlockSection title="Opportunity Information" collapsible="false" columns="2">
+    <apex:inputField value="{!opp.Name}"/>
+    <apex:inputField value="{!opp.StageName}"/>
+     <apex:inputField value="{!opp.CloseDate}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<!--<apex:commandButton value="Cancel" action="{!doCancel}"/>-->
+<apex:commandButton value="Save" action="{!save}"/>
+</apex:pageBlockButtons> 
+  </apex:pageBlock>
+  </apex:form>
+  </apex:page>

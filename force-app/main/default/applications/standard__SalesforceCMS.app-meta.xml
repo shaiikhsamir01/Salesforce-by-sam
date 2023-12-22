@@ -9,11 +9,15 @@
     <tabs>standard-CmsChannel</tabs>
     <tabs>standard-CmsWorkspaces</tabs>
     <tabs>standard-CmsExperiences</tabs>
-    <tabs>Test__c</tabs>
+    <tabs>RegisteredUser__c</tabs>
+    <tabs>OneClick</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
         <mappings>
-            <tab>Test__c</tab>
+            <tab>OneClick</tab>
+        </mappings>
+        <mappings>
+            <tab>RegisteredUser__c</tab>
         </mappings>
         <mappings>
             <tab>standard-CmsAuthorHome</tab>

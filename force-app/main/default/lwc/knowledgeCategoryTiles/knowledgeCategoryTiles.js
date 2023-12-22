@@ -1,4 +1,3 @@
-
 import { LightningElement, api, wire, track } from 'lwc';
 import getAllCategories from '@salesforce/apex/CategoryInfo.getAllCategories';
 import getDataCategoryGroup from '@salesforce/apex/DataCategoryController.fetchDataCategoriesGroup';
@@ -49,4 +48,3 @@ export default class KnowledgeCategoryTiles extends LightningElement {
   }
 
 }
-

@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Give SCRT2 Integration User necessary access</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Knowledge__kav.Answer__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Knowledge__kav.Question__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RegisteredUser__c.Country__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RegisteredUser__c.Email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RegisteredUser__c.city__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RegisteredUser__c.state__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <hasActivationRequired>true</hasActivationRequired>
     <label>SCRT2 Integration User</label>
     <license>Cloud Integration User</license>

@@ -8,6 +8,9 @@
         <componentInstances>
             <componentName>notes:utilityBarNoteList</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>runtime_service_omnichannel:omniWidget</componentName>
+        </componentInstances>
         <name>utilityItems</name>
         <type>Region</type>
     </flexiPageRegions>
