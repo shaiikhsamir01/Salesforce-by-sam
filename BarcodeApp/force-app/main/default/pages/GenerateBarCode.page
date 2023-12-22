@@ -1,0 +1,53 @@
+<apex:page sidebar="false">
+    <apex:slds />
+    <div style="width:100%">
+        <div class="slds-m-bottom--medium slds-notify slds-notify--toast" style="text-align:center;width:100% !important">Smart Barcode Info</div><br/><br/>
+        <div class="slds-text-body--regular" style="margin-left:5%;margin-right:5%;font-family: sans-serif;">
+            <b>Smart Barcode</b> app is used to convert any text to barcode. 
+            We can use this app for any field in any object.
+            We have implemented seven techniques in this app. 
+            Below are the details of each technique for implementation:<br/><br/>
+            <div style="margin-left:2%;margin-right:5%;">
+                <ul>
+                    <li><b>Code 128 :</b> Code 128 is a BarCode Generation Technique which converts any numbers, characters and special characters into 1 or 0 form. 
+                        It is a very effective, high-density symbology which permits the encoding of alphanumeric data.<br/><br/> 
+                        For using this techniques, user need to use 
+                        <b> &lt;SmartBarcode:BarCode128 codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li><br/>
+                    <li><b>Code 39 :</b> Code 39 is a BarCode Generation Technique which only converts  number and Capital letters into 1 or 0 (Binary Form) form.<br/><br/> 
+                        For using this techniques, user need to use 
+                        <b>
+                            &lt;SmartBarcode:BarCode39 codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /></b> in the code.
+                    </li><br/>
+                    <li><b>EAN 13 :</b> EAN 13 is a BarCode Generation Technique which only converts  number (12 digit number) into 1 or 0 (Binary Form) form.
+                        If User enter less than 12 digit than this techniques will append 0 before the number. When user will scan the number, user will get 13 digit number with checksum digit.
+                        <br/><br/>  For using this techniques, user need to use 
+                        <b>   &lt;SmartBarcode:ean13barcode codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li><br/>
+                    <li><b>EAN 8 :</b>EAN 8 is a BarCode Generation Technique which only converts  number (7 digit number) into 1 or 0 (Binary Form) form. When user will scan the number, user will get 8 digit number with checksum digit.
+                        If User enter less than 7 digit than this techniques will not convert into 1 or 0 (Binary Form).
+                        <br/> <br/> For using this techniques, user need to use 
+                        <b>   &lt;SmartBarcode:EAN8barcode codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li><br/>
+                    <li><b>Code 93 :</b>Code 93 is a BarCode Generation Technique which only converts numbers (0-9), characters(A-Z) and special characters(- . $ / + % SPACE) into 1 or 0 (Binary Form) form.
+                        When user will scan the entered value barcode, user will get the entered value with checksum digit.
+                        If User enter any other character instead of mentioned above than this techniques will not convert into 1 or 0 (Binary Form).
+                        <br/> <br/> For using this techniques, user need to use 
+                        <b>   &lt;SmartBarcode:BarCode93 codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li><br/>
+                    <li><b>Code 25 :</b>Code 25 is a BarCode Generation Technique which only converts number (0-9) into 1 or 0 (Binary Form) form. When user will scan the entered value barcode, user will get the entered value with checksum digit.
+                        If User enter any other character instead of mentioned above than this techniques will not convert into 1 or 0 (Binary Form).
+                        <br/> <br/> For using this techniques, user need to use 
+                        <b>   &lt;SmartBarcode:BarCode25 codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li><br/>
+                    <li><b>Code 11 :</b>Code 11 is a BarCode Generation Technique which only converts number (0-9) and special character (-) into 1 or 0 (Binary Form) form. When user will scan the entered value barcode, user will get the entered value with checksum digit.
+                        If User enter any other character instead of mentioned above than this techniques will not convert into 1 or 0 (Binary Form).
+                        <br/> <br/> For using this techniques, user need to use 
+                        <b>   &lt;SmartBarcode:BarCode11 codeValue=&#8220;&#123;!ObjectName.FieldName&#125;&#8221; /> </b>in the code.
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</apex:page>

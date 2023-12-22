@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tests</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Generate_Smart_Barcode</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Testlightning</name>
+    </webLinks>
+</CustomObjectTranslation>

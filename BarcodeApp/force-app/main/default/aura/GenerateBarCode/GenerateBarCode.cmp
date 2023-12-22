@@ -1,0 +1,100 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasrecordId,force:lightningQuickAction" 
+                access="global" 
+                controller="DynamicBarCodeCtr">
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <aura:attribute name="fieldsName" type="String[]" />
+    <aura:attribute name="objectName" type="String"/>
+    <aura:attribute name="emailaddress" type="String"/>
+    <aura:attribute name="apiNameWithFieldName" type="Map"/>
+    <aura:attribute name="idRecord" type="String"/>
+    <aura:attribute name="generateValue" type="String[]" default=""/>
+    <aura:attribute name="showErrorMessage" type="String" default="hello No Msg"/>
+    <aura:attribute name="hasErrors" type="Boolean" default="false"/>
+    <aura:attribute name="isSending" type="Boolean" />
+    <aura:attribute name="barcodeValue" type="String" default=""/>
+    <aura:attribute name="showValue" type="Boolean" />
+    
+    <aura:if isTrue="{!v.isSending}">
+        <div class="slds-spinner_container">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.hasErrors}">
+        <div class="recordSaveError">
+            <ui:message title="Error" severity="error" closable="false">
+                <ui:outputText value="{!v.showErrorMessage}" />
+            </ui:message>
+        </div>
+    </aura:if>
+    <div class="slds">
+        <p class="slds-m-bottom--medium slds-notify slds-notify--toast slds-theme--warning" 
+            style="text-align:center;"><b>Note : If barcode is not generated for any field. 
+            It means value is either blank or not compatible with Selected Format</b></p>
+    </div>
+    <div> 
+        Select Format
+        <ui:inputSelect aura:id="formatType">
+            <ui:inputSelectOption text="Code 128" value="Code 128"/>
+            <ui:inputSelectOption text="Code 39" value="Code 39"/>
+            <ui:inputSelectOption text="EAN 13" value="EAN 13"/>
+            <ui:inputSelectOption text="EAN 8" value="EAN 8"/>
+            <!-- Added By Mohit -->
+            <ui:inputSelectOption text="Code 93" value="Code 93"/>
+            <ui:inputSelectOption text="Code 11" value="Code 11"/>
+            <ui:inputSelectOption text="Code 25" value="Code 25"/>
+            <!-- END -->
+        </ui:inputSelect>
+    </div>
+    <div>
+        Select Field
+        <ui:inputselect aura:id="selectedField">
+            
+            <ui:inputSelectOption text="--None--" label="--None--" value=""/>
+            <aura:iteration items="{!v.fieldsName}" var="field">
+                <ui:inputSelectOption text="{!field}" label="{!field}" value="">
+                </ui:inputSelectOption>
+            </aura:iteration>
+        </ui:inputselect>
+    </div>
+    <!--<div>
+        <ui:inputText label="Enter Email Id:" class="field" value="{!v.emailaddress}"/>
+    </div>-->
+    <br/><br/>
+    <ltng:require styles="{!$Resource.barcodeCSS}" />    
+    <ui:button label="Generate Barcode" press="{!c.generateBarcodeValue}" aura:id="Generate"/> 
+    <ui:button label="Attach Barcode into Attachment" press="{!c.generateBarcodeValue}" aura:id="Generatepdf"/>
+    <!--<ui:button label="Email as Pdf" press="{!c.emailasPdf}" aura:id="Emailpdf"/>-->
+    <br/><br/>
+    <br/>
+    <aura:iteration items="{!v.generateValue}" var="field">
+        <div style="display: none;">{!field}</div>
+        <aura:if isTrue="{!field=='0'}">
+            <div style="background-color: white;
+                        display: inline-block;
+                        overflow: hidden;
+                        padding: 0;
+                        width: 1px;
+                        height: 1cm;">
+            </div>              
+        </aura:if>
+        <aura:if isTrue="{!field=='1'}">
+            <div style="background-color: black;
+                        display: inline-block;
+                        overflow: hidden;
+                        padding: 0;
+                        width: 1px;
+                        height: 1cm;">
+            </div>
+        </aura:if>
+    </aura:iteration>
+    <br/>
+    <aura:if isTrue="{!v.showValue}">
+        <ui:outputText value="{!v.barcodeValue}" />
+    </aura:if>
+</aura:component>

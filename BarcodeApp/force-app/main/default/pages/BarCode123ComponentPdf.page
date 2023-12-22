@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf"> 
+
+
+<html> 
+    <head> 
+    	<style> 
+        </style> 
+    </head> 
+    
+    <body> 
+        <div id="test"> 
+        	<c:BarCode128 codeValue="123123123" barcodeContainerPaddingValue="0px"/> 
+        </div> 
+    </body> 
+</html> 
+</apex:page>

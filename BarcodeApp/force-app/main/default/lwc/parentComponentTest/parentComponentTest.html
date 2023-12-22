@@ -1,0 +1,33 @@
+<template>
+    <template if:false={nocategoryFound}>
+        <lightning-badge label="Select Data Category"></lightning-badge>
+        <div class="container">
+            <lightning-layout pull-to-boundary="small">
+                <template for:each={categoryGroup} for:item="entry">
+                    <div key={entry} class="custom-card-container slds-var-p-around_small">
+                        <lightning-layout-item size="auto" class="slds-var-m-around_small custom-card">
+                            <lightning-card class="custom-card" data-key={entry} onclick={handleClick}>
+                                <div class="card-content slds-var-m-around_small slds-var-p-around_small">
+                                    <strong>{entry}</strong>
+                                </div>
+                            </lightning-card>
+                        </lightning-layout-item>
+                    </div>
+                </template>
+            </lightning-layout>
+        </div>
+    </template>
+    <template if:true={nocategoryFound}>
+        <div class="slds-var-m-around_large">
+            <lightning-button variant="brand-outline" label="Refresh" title="Primary action"
+                onclick={refreshPage}></lightning-button>
+        </div>
+
+        <lightning-card class="optional-card">
+            <div class="slds-var-m-around_large slds-var-p-around_large optional-custom-card-content">
+                <strong>No subcategory found</strong>
+            </div>
+        </lightning-card>
+    </template>
+    <c-show-articles></c-show-articles>
+</template>

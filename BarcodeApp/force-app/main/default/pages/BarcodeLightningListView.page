@@ -1,0 +1,15 @@
+<apex:page docType="html-5.0" standardController="Account" recordSetVar="accs" extensions="LightningListViewController" action="{!redirectToDynamicBarcode}">
+    <apex:slds />
+    <apex:form >        
+        <center>
+            <div class="slds-notify slds-notify_toast slds-theme_warning" style="text-align:center; margin-top:20px;">
+                <apex:messages />
+            </div>
+        </center>
+        <center>
+            <div >
+                <apex:commandButton value="Back" action="{!back}" styleClass="slds-button slds-button_neutral"/>
+            </div>
+        </center>      
+    </apex:form> 
+</apex:page>

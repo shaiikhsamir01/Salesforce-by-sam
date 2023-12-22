@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input style="width:600px" class="slds-var-m-around_medium" label="Please Provide Input"
+                    value={inputValue} onchange={changeHandler}></lightning-input>
+                <lightning-button class="slds-var-m-around_medium" variant="Brand" label="Generate QR"
+                    title="Generate QR" onclick={createQR}></lightning-button>
+                <lightning-button class="slds-var-m-around_medium" variant="brand" label="Generate Barcode PDF"
+                    onclick={generatePDF}>
+                </lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class="canvas-container">
+                    <canvas width="200" height="200"></canvas>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

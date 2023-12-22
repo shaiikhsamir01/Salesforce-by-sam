@@ -1,0 +1,71 @@
+<template>
+	
+	<lightning-card title="Generate Barcodes">
+		<lightning-spinner alternative-text="Loading" size="large" if:true={showSpinner}></lightning-spinner>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-combobox name="Select Format" label="Select Format" value={value}
+					placeholder="Select Barcode Format" options={options} onchange={handleChange}>
+				</lightning-combobox>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-combobox name="Select Field" label="Select Field" value={selectedField}
+					placeholder="Select Field Value" options={getFieldOptions} onchange={handleChangeField}>
+				</lightning-combobox>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" padding="around-small">
+				<lightning-input type="email" name="email" label="Email" value={emailValue}
+					onchange={handleEmailChange}>
+				</lightning-input>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="3" padding="around-small">
+				<lightning-button variant="brand" label="Generate Barcode" title="Barcode" onclick={handleClick}
+					class="slds-m-left_x-small">
+				</lightning-button>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="3" padding="around-small">
+				<lightning-button variant="brand" label="Save as Attachment" disabled={isButton1} title="Save"
+					onclick={handleSave} class="slds-m-left_x-small">
+				</lightning-button>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="3" padding="around-small">
+				<lightning-button variant="brand" label="Generate Barcode PDF" onclick={handleGenerateBarcodePDF}>
+				</lightning-button>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="3" padding="around-small">
+				<lightning-button variant="brand" label="Send Email" disabled={isEmailButtonDisabled} title="Send Email"
+					onclick={handleSendEmail} class="slds-m-left_x-small">
+				</lightning-button>
+			</lightning-layout-item>
+		</lightning-layout>
+
+		<lightning-layout multiple-columns>
+			<!-- If accountList exists -->
+			<template if:true={accountList}>
+				<lightning-layout-item size="12">
+					<template for:each={accountList} for:item="accountListItem">
+						<div key={accountListItem.Id}>
+							<canvas lwc:dom="manual" data-barcode={accountListItem.Id}
+								style="margin-bottom: 10px;"></canvas>
+						</div>
+					</template>
+				</lightning-layout-item>
+			</template>
+
+			<!-- If accountList is empty -->
+			<template if:false={accountList}>
+				<lightning-layout-item size="12">
+					<div>
+						<canvas lwc:dom="manual" class="barcode-canvas"></canvas>
+					</div>
+				</lightning-layout-item>
+			</template>
+		</lightning-layout>
+
+	</lightning-card>
+</template>

@@ -1,0 +1,107 @@
+<apex:page sidebar="false" controller="DynamicBarCodeCtr" >
+    <apex:slds />
+    <apex:pageBlock >
+        <apex:outputPanel id="messagePanel" onclick="clearMessage();">
+            <apex:pageMessages id="message"></apex:pageMessages>
+        </apex:outputPanel>
+        
+    </apex:pageBlock>
+    
+    <div style="text-align:center">
+        <h1 class="slds-m-bottom--medium slds-notify slds-notify--toast slds-theme--warning" 
+            style="text-align:center;">
+            Note : If barcode is not generated for any field. 
+            It means value is either blank or not compatible with Selected Format.
+        </h1><br/>
+    </div>
+    <apex:form id="barcodeform" >
+        <apex:outputPanel id="timerPanel">
+            <apex:actionPoller reRender="messagePanel" 
+                               interval="15"
+                               enabled="{!timer}" 
+                               action="{!timerOff}"/> 
+        </apex:outputPanel>
+        
+        <apex:actionFunction name="clearMessage" 
+                             action="{!timerOff}" 
+                             reRender="messagePanel"/>
+        <h1 style="text-align:center;font-size:2em" class="font-size-heading-x-large">Generate Barcode</h1><br/>
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="slds-truncate"><h1> Select Format Type</h1></div>
+                    </td>
+                    <td >
+                        <div class="slds-truncate">
+                            <apex:selectList size="1" value="{!format}">
+                                <apex:selectoptions value="{!FormatType}"></apex:selectoptions>
+                            </apex:selectList></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <div class="slds-truncate" >Select Field</div>
+                    </td>
+                    <td >
+                        <div class="slds-truncate">  <apex:selectList size="1" value="{!selectedField}">
+                            <apex:selectoptions value="{!options}"></apex:selectoptions>
+                            </apex:selectList></div>
+                    </td>
+                </tr>
+                <tr title="Before clicking on Email as pdf button, enter Email Id">
+                    <td>
+                        <div class="slds-truncate"><h1>Email Id</h1></div>
+                    </td>
+                    <td >
+                        <div class="slds-truncate">
+                            <apex:inputtext value="{!EmailId}"/>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table><br/><br/>
+        <apex:commandButton value="Generate BarCode"  action="{!generateBarcode}"
+                            styleClass="slds-button slds-button--brand"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandButton value="Generate BarCode In PDF"  action="{!generateBarcodepdf}"
+                            styleClass="slds-button slds-button--brand" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:commandButton value="Attach as pdf"  action="{!StoreIntoAttachment}"
+                            styleClass="slds-button slds-button--brand"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputLabel rendered="{!IF(ListOfIds.size==1,true,true)}">
+            <apex:commandButton value="Email as pdf"  action="{!SendAsAttachment}"
+                                styleClass="slds-button slds-button--brand"/>
+        </apex:outputLabel>
+        <div>
+            <apex:outputPanel rendered="{!IF(BarcodeValue!=null,true,false)}">
+                <apex:repeat value="{!BarcodeValueOuterList}" var="BarValue" >  
+                    <apex:repeat value="{!BarValue}" var="barCode">
+                        <apex:outputPanel rendered="{!IF(format=='Code 39',true,false)}">
+                            <c:BarCode39 codeValue="{!barCode}"  />
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 128',true,false)}">
+                            <c:BarCode128 codeValue="{!barCode}"/>
+                        </apex:outputPanel>                        
+                        <apex:outputPanel rendered="{!IF(format=='EAN 13',true,false)}">
+                            <c:EAN13barcode codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='EAN 8',true,false)}">
+                            <c:EAN8barcode codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <!-- Added by mohit-->
+                        <apex:outputPanel rendered="{!IF(format=='Code 93',true,false)}">
+                            <c:BarCode93 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 11',true,false)}">
+                            <c:BarCode11 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 25',true,false)}">
+                            <c:BarCode25 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <!--END-->
+                        <br/>
+                    </apex:repeat>
+                </apex:repeat>                
+            </apex:outputPanel>
+        </div>
+    </apex:form>
+</apex:page>

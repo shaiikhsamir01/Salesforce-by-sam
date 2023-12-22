@@ -1,0 +1,25 @@
+
+<template>
+    <lightning-badge label="Select Data Category" ></lightning-badge>
+  <!--<div class="container">
+        <lightning-layout multiple-rows="true" pull-to-boundary="small">
+            <template for:each={categoryGroup} for:item="entry">
+                <div key={entry} class="custom-card-container slds-var-p-around_large">
+                    <lightning-layout-item  size="auto" class="slds-var-m-around_large custom-card">
+                        <lightning-card  class="custom-card" data-key={entry} onclick={handleClick}>
+                            <div class="card-content slds-var-m-around_large slds-var-p-around_large">
+                               <strong>{entry}</strong> 
+                            </div>
+                        </lightning-card>
+                    </lightning-layout-item>
+                </div>
+            </template>
+        </lightning-layout>
+    </div>-->
+    <lightning-card>
+    <template for:each={categoryGroup} for:item="item">
+       <span key={item}>{item}</span>
+    </template>
+</lightning-card> 
+   <!-- <c-show-articles></c-show-articles>-->
+</template>

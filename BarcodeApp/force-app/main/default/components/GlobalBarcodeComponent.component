@@ -1,0 +1,73 @@
+<apex:component controller="GlobalBarcodeController" access="global">
+    
+    <!-- Attributes -->
+    <apex:attribute assignTo="{!sourceCodeValue}" 
+                    type="String" 
+                    name="codeValue" 
+                    description="The string to encode."  
+                    access="global" />
+    
+    <apex:attribute assignTo="{!barcodeType}" 
+                    type="String" 
+                    name="type" 
+                    description="The string to get the barcode type."  
+                    required="true"
+                    access="global" />
+                    
+    <apex:attribute assignTo="{!checksum}" 
+                    type="Boolean" 
+                    name="crcValue" 
+                    description="This check tells checksum is applicable or not"  
+                    default="true"
+                    access="global"/>
+    
+    <apex:attribute assignTo="{!showBarcodeValue}" 
+                    type="Boolean" 
+                    name="showCodeValue" 
+                    default="true" 
+                    description="Will specify whether to render Code Value or not" 
+                    access="global" />
+    
+    <apex:attribute assignTo="{!barcodeContainerPadding}" 
+                    type="string" 
+                    name="barcodeContainerPaddingValue" 
+                    default="10px" 
+                    description="Required padding, Ex. 100px" 
+                    access="global" />
+    
+    <apex:attribute assignTo="{!barcodeWidthInPixels}" 
+                    type="string" 
+                    name="barcode_width" 
+                    default="1.02px" 
+                    description="Required width for Barcode" 
+                    access="global" />
+    
+    <apex:attribute assignTo="{!barcodeHeightInPixels}" 
+                    type="string" 
+                    name="barcode_height" 
+                    default="1px" 
+                    description="Required height for Barcode" 
+                    access="global" />
+    
+    <!-- Style-Sheet -->
+    <apex:stylesheet value="{!URLFOR($Resource.barcodeCSS)}"/>
+    
+    <!-- Markup -->
+    
+    <div style="{! 'display: inline-block; min-width: 0.5in; padding:' +  barcodeContainerPaddingValue + ';'}">
+        <div>
+            <apex:repeat value="{!BarCodeBars}" var="bar">
+               <apex:outputText value=""
+                                styleClass="{!IF(bar='1', 'blackbar', 'whitebar')}"
+                                style="{! 'width: ' + barcodeWidthInPixels + 'px;important; height: ' + barcodeHeightInPixels + 'px;important;'}">
+                </apex:outputText>
+            </apex:repeat>
+        </div>
+        
+        <apex:outputLabel rendered="{!IF(AND(showBarcodeValue,BarCodeBars!=null,BarCodeBars.size>1),true,false)}">
+            <div style="text-align: center">
+                {!sourceCodeValue}
+            </div>
+        </apex:outputLabel>
+    </div>
+</apex:component>

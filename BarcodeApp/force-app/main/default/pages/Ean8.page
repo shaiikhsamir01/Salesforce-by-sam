@@ -1,0 +1,24 @@
+<apex:page controller="EAN8Encoding" showHeader="true" sidebar="false">
+    <div style="display: inline-block; min-width: 1in; padding: 1%;" >
+        <div style="text-align: center;">
+            <apex:repeat value="{!barCodeBars}" var="bar">
+                <apex:outputText value="&nbsp;" style="{!if(bar='1','background-color: black;
+                                                       display: inline-block;
+                                                       overflow: hidden;
+                                                       padding: 0;
+                                                       width: 1.4px;
+                                                       height: 2cm;',
+                                                       
+                                                       'background-color: white;
+                                                       display: inline-block;
+                                                       overflow: hidden;
+                                                       padding: 0;
+                                                       width: 1.4px;
+                                                       height: 2cm;')}"  escape="false" />
+            </apex:repeat>
+            <div>
+                <apex:outputText >{!sourceCodeValue}</apex:outputText>
+            </div>
+        </div>
+    </div>
+</apex:page>

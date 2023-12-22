@@ -1,0 +1,10 @@
+.note {
+  background-color: rgb(255, 255, 255);
+  color: Black;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center; /* Center align the note */
+}
+.dummy{
+	color : black;
+}

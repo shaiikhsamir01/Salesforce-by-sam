@@ -1,0 +1,35 @@
+
+.bear-tile {
+    display: block;
+    height: 80%; 
+    
+}
+
+.card-content {
+    padding: 20px; 
+}
+
+.custom-card {
+    border-radius: .35rem;
+    width: 50%; 
+    overflow: hidden;
+    
+}
+
+.custom-card-container {
+    height: 200px; 
+}
+.optional-card{
+    margin-top: 500px;
+    border-radius: .35rem;
+    width: 60%; 
+    height: 40%;
+    padding-top: 500px;
+    padding-bottom: 500px;
+    overflow: hidden;
+}
+
+.optional-custom-card-content{
+    text-align: center; /* Center the content within the card */
+    padding: 20px; /* Add padding for better spacing */
+}

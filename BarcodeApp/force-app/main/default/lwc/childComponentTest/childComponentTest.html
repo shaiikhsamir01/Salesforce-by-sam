@@ -1,0 +1,27 @@
+<template>
+    <template if:true={displayArticle}>
+        <lightning-badge label="Article List" class="slds-badge_inverse"></lightning-badge>
+        <div class="container">
+            <lightning-layout multiple-rows="true" pull-to-boundary="small">
+                <template for:each={articleData} for:item="entry">
+                    <div key={entry.ParentId} class="custom-card-container slds-var-p-around_large">
+                        <lightning-layout-item size="auto" class="slds-var-m-around_large custom-card">
+                            <lightning-card class="custom-card">
+                                <div class="card-content slds-var-m-around_large slds-var-p-around_large">
+                                    <strong>{entry.Parent.Title}</strong>
+                                </div>
+                            </lightning-card>
+                        </lightning-layout-item>
+                    </div>
+                </template>
+            </lightning-layout>
+        </div>
+    </template>
+    <template if:false={displayArticle}>
+        <lightning-card class="optional-card optional-custom-card">
+            <div class="slds-var-m-around_large slds-var-p-around_large optional-custom-card-content">
+                <strong>Select category to see article here</strong>
+            </div>
+        </lightning-card>
+    </template>
+</template>

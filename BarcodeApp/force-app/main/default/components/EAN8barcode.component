@@ -1,0 +1,22 @@
+<apex:component controller="EAN8Encoding" access="global">
+    <apex:attribute assignTo="{!sourceCodeValue}" type="string" name="codeValue" description="The string to encode." access="global"/>
+   <apex:attribute assignTo="{!barcodeContainerPadding}" 
+                    type="string" 
+                    name="barcodeContainerPaddingValue" 
+                    default="10px" 
+                    description="Required padding, Ex. 100px" 
+                    access="global" />
+    <apex:stylesheet value="{!URLFOR($Resource.barcodeCSS)}"/>  
+    <div style="{! 'display: inline-block; min-width: 1in; padding:' +  barcodeContainerPaddingValue + ';'}">
+        <div>
+            <apex:repeat value="{!barCodeBars}" var="bar">
+                <apex:outputText value="" styleClass="{!if(bar='1','blackbar','whitebar')}"  />
+            </apex:repeat>
+        </div>
+        <apex:outputLabel rendered="{!IF(AND(barCodeBars!=null,barCodeBars.size==67),true,false)}">
+            <div style="text-align: center">
+                {!sourceCodeValue}           
+            </div>
+        </apex:outputLabel>
+    </div>
+</apex:component>

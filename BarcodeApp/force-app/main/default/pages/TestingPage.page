@@ -1,0 +1,66 @@
+<apex:page standardcontroller="Account">
+<html>
+    <body>
+         <table>
+              <tr>
+                <th>Barcode Format</th>
+                <th>Barcode</th>
+              </tr>
+              <tr>
+                <td>Barcode Using Code128</td>
+                <td><c:BarCode128 codeValue="{!$User.FirstName} {!$User.LastName}" barcodeContainerPaddingValue="10px"></c:BarCode128></td>
+              </tr>
+              <tr>
+                <td>Barcode Using EAN8</td>
+                <td><c:EAN8barcode codeValue="9031101"></c:EAN8barcode></td>
+              </tr>
+              <tr>
+                <td>Barcode Using Code25 (with Checksum)</td>
+                <td><c:BarCode25 codeValue="46732862873" crcValue="true" showCodeValue="true"></c:BarCode25></td>
+              </tr>
+              <tr>
+                <td>Barcode Using Code25</td>
+                <td><c:BarCode25 codeValue="46732862873" showCodeValue="true"></c:BarCode25></td>
+              </tr>
+              <tr>
+                <td>Barcode Using Code39</td>
+                <td><c:BarCode39 codeValue="ABCcc-12 34.$/+%"></c:BarCode39></td>
+              </tr>
+              <tr>
+                <td>Barcode Using EAN13</td>
+                <td><c:EAN13barcode codeValue="5554533" ></c:EAN13barcode></td>
+              </tr>
+              
+              <tr>
+                <td>Barcode Using Code93</td>
+                <td><c:BarCode93 codeValue="5554533" showCodeValue="true"></c:BarCode93></td>
+              </tr>
+              <tr>
+                <td>Barcode Using Code11</td>
+                <td><c:BarCode11 codeValue="5554533" showCodeValue="true"></c:BarCode11></td>
+              </tr>
+        </table>
+        <messaging:emailTemplate subject="Test EMail" recipientType="User" relatedToType="Case" replyTo="mohit@astreait.com">
+
+     <messaging:htmlEmailBody >
+
+<html>
+
+    <body>
+
+        <c:BarCode39 codeValue="{!relatedTo.CaseNumber}" />
+
+        This is your new Visualforce Email Template.
+
+    </body>
+
+</html>
+
+     </messaging:htmlEmailBody>
+
+</messaging:emailTemplate>
+    </body>
+</html>
+
+
+</apex:page>

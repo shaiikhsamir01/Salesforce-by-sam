@@ -1,0 +1,35 @@
+<apex:page sidebar="false" controller="DynamicBarCodeEmailCtr"  action="{!barcodeList}" >
+    <apex:form >     
+        <apex:pageBlock >
+            
+            <!--<apex:repeat value="{!BarcodeValueOuterList}" var="BarValue">  -->
+                    <apex:repeat value="{!BarcodeValue}" var="barCode">
+                        <apex:outputPanel rendered="{!IF(format=='Code 39',true,false)}">
+                            <c:BarCode39 codeValue="{!barCode}" />
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 128',true,false)}">
+                            <c:BarCode128 codeValue="{!barCode}"/>
+                        </apex:outputPanel>                        
+                        <apex:outputPanel rendered="{!IF(format=='EAN 13',true,false)}">
+                            <c:EAN13barcode codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='EAN 8',true,false)}">
+                            <c:EAN8barcode codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <!-- Added by mohit-->
+                        <apex:outputPanel rendered="{!IF(format=='Code 93',true,false)}">
+                            <c:BarCode93 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 11',true,false)}">
+                            <c:BarCode11 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(format=='Code 25',true,false)}">
+                            <c:BarCode25 codeValue="{!barCode}"/>
+                        </apex:outputPanel>
+                        <!--END-->
+                        <br/>
+                    </apex:repeat>
+                <!--</apex:repeat> -->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
