@@ -1,4 +1,5 @@
 public class AssessmentTriggerHandler {
+    //this is my code for interview
     public static void method(List<Opportunity> oppList,Map<Id,Opportunity> oldMap){
         set<Id> accId = new  set<Id>();
         List<Account> accToUpdate = new List<Account>();
